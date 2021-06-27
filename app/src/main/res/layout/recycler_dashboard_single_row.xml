@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rlContent">
+
+    <ImageView
+        android:id="@+id/imgRecyclerRowProfileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_profile"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/txtBookName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="50dp"
+        android:text="List Item"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/imgRecyclerRowProfileImage"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txtBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Name Of Author"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_below="@+id/txtBookName"
+        android:layout_toRightOf="@+id/imgRecyclerRowProfileImage"/>
+
+    <TextView
+        android:id="@+id/txtBookPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Rs. 299"
+        android:textColor="@color/green600"
+        android:layout_toRightOf="@id/imgRecyclerRowProfileImage"
+        android:layout_below="@id/txtBookAuthor"/>
+
+    <ImageView
+        android:id="@+id/imgRecyclerRowStarImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="48dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/ic_rating_star" />
+
+    <TextView
+        android:id="@+id/txtBookRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        android:text="4.5"
+        android:textColor="@color/yellow700"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

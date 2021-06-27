@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BookHub</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="about_app">About App</string>
+    <string name="profile">Profile</string>
+    <string name="favourite">Favourite</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+    <string name="favourite_fragment">Favourite Fragment</string>
+    <string name="abot_app_fragment">About App Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="karan_choudhary">Karan Choudhary</string>
+    <string name="emailID">kc5101999@icloud.com</string>
+    <string name="Phone">8126090368</string>
+    <string name="address">It is the Address</string>
+</resources>
