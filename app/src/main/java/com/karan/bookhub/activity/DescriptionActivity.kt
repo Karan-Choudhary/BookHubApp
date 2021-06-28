@@ -149,14 +149,14 @@ class DescriptionActivity : AppCompatActivity() {
                                     Toast.makeText(this, "Some error occurred", Toast.LENGTH_SHORT).show()
                                 }
                             }else {
-                                val async = DBAsyncTask(applicationContext,bookEntity,3)
+                                val async = DBAsyncTask(applicationContext,bookEntity,3).execute()
                                 val result = async.get()
 
                                 if(result)
                                 {
                                     Toast.makeText(this, "Book removed from favourites", Toast.LENGTH_SHORT).show()
 
-                                    btnAddToFav.text = "Add to favourite"
+                                    btnAddToFav.text = "Add to favourites"
                                     val noFavColor = ContextCompat.getColor(applicationContext,R.color.green600)
                                     btnAddToFav.setBackgroundColor(noFavColor)
                                 } else{

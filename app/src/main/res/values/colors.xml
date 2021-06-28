@@ -10,4 +10,6 @@
     <color name="green600">#43a047</color>
     <color name="yellow700">#fbc02d</color>
     <color name="colorFavourite">#311b92</color>
+    <color name="grey400">#bdbdbd</color>
+    <color name="grey200">#eeeeee</color>
 </resources>

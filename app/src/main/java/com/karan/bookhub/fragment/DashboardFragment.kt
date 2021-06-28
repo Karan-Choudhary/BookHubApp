@@ -61,7 +61,7 @@ class DashboardFragment : Fragment() {
 
 
 
-        layoutManager = LinearLayoutManager(activity)
+        layoutManager = LinearLayoutManager(activity as Context)
 
 
         val queue = Volley.newRequestQueue(activity as Context)
@@ -108,8 +108,13 @@ class DashboardFragment : Fragment() {
             }, Response.ErrorListener {
 
                 // Here we will handle the errors
-                Toast.makeText(activity as Context, "Some Error Occurred, Please try again Later(VolleyError)", Toast.LENGTH_SHORT).show()
-
+                if(activity!=null) {
+                    Toast.makeText(
+                        activity as Context,
+                        "Some Error Occurred, Please try again Later(VolleyError)",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }){
 
                 override fun getHeaders(): MutableMap<String, String> {
