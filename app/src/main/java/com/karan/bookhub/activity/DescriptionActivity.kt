@@ -98,7 +98,7 @@ class DescriptionActivity : AppCompatActivity() {
                         val bookImageUrl = bookJsonObject.getString("image")
 
                         Picasso.get().load(bookJsonObject.getString("image")).error(R.drawable.default_book_cover).into(imgBookImage)
-                        txtBookAuthor.text = bookJsonObject.getString("name")
+                        txtBookName.text = bookJsonObject.getString("name")
                         txtBookAuthor.text = bookJsonObject.getString("author")
                         txtBookPrice.text = bookJsonObject.getString("price")
                         txtBookRating.text = bookJsonObject.getString("rating")
