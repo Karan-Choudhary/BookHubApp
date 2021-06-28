@@ -6,10 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
@@ -27,6 +25,9 @@ import com.karan.bookhub.adapter.DashboardRecyclerAdapter
 import com.karan.bookhub.model.Book
 import com.karan.bookhub.util.ConnectionManager
 import org.json.JSONException
+import java.util.*
+import kotlin.Comparator
+import kotlin.collections.HashMap
 
 class DashboardFragment : Fragment() {
 
@@ -42,6 +43,15 @@ class DashboardFragment : Fragment() {
 
     val bookInfoList = arrayListOf<Book>()
 
+    private val ratingComparator = Comparator<Book>{ book1, book2 ->
+        if(book1.bookRating.compareTo(book2.bookRating,true) == 0)
+        {
+            // sort according to the name if string is same
+            book1.bookName.compareTo(book2.bookName, true)
+        } else{
+            book1.bookRating.compareTo(book2.bookRating,true)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +60,8 @@ class DashboardFragment : Fragment() {
         // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+
+        setHasOptionsMenu(true)
 
         recyclerDashboard = view.findViewById(R.id.recyclerDashboard)
 
@@ -146,6 +158,24 @@ class DashboardFragment : Fragment() {
 
 
         return view
+    }
+
+    //for sort option
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater?.inflate(R.menu.menu_dashboard,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val id = item?.itemId
+        if(id == R.id.action_sort){
+            Collections.sort(bookInfoList, ratingComparator)
+            bookInfoList.reverse()
+        }
+
+        recyclerAdapter.notifyDataSetChanged()
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
