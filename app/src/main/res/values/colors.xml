@@ -12,4 +12,6 @@
     <color name="colorFavourite">#311b92</color>
     <color name="grey400">#bdbdbd</color>
     <color name="grey200">#eeeeee</color>
+    <color name="orange_500">#ff9800</color>
+    <color name="orange_700">#f57c00</color>
 </resources>
