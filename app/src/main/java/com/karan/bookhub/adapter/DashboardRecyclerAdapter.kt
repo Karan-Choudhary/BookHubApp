@@ -5,16 +5,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.karan.bookhub.R
 import com.karan.bookhub.activity.DescriptionActivity
 import com.karan.bookhub.model.Book
 import com.squareup.picasso.Picasso
-import org.w3c.dom.Text
 
 class DashboardRecyclerAdapter(val context:Context, val itemList: ArrayList<Book>): RecyclerView.Adapter<DashboardRecyclerAdapter.DashboardViewHolder>() {
 
@@ -33,7 +29,7 @@ class DashboardRecyclerAdapter(val context:Context, val itemList: ArrayList<Book
 //        holder.imgBookImage.setImageResource(book.bookImage)
         Picasso.get().load(book.bookImage).error(R.drawable.default_book_cover).into(holder.imgBookImage)
 
-        holder.rlContent.setOnClickListener{
+        holder.llContent.setOnClickListener{
             val intent = Intent(context,DescriptionActivity::class.java)
             intent.putExtra("book_id",book.bookID)
             context.startActivity(intent)
@@ -51,6 +47,6 @@ class DashboardRecyclerAdapter(val context:Context, val itemList: ArrayList<Book
         val txtBookPrice:TextView = view.findViewById(R.id.txtBookPrice)
         val txtBookRating:TextView = view.findViewById(R.id.txtBookRating)
         val imgBookImage:ImageView = view.findViewById(R.id.imgRecyclerRowProfileImage)
-        val rlContent:RelativeLayout = view.findViewById(R.id.rlContent)
+        val llContent:LinearLayout = view.findViewById(R.id.llContent)
     }
 }

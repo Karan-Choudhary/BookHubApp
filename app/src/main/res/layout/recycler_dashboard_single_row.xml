@@ -1,74 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/rlContent">
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="4dp">
 
-    <ImageView
-        android:id="@+id/imgRecyclerRowProfileImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:padding="10dp"
-        android:src="@drawable/ic_profile"
-        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:weightSum="6"
+        android:id="@+id/llContent">
 
-    <TextView
-        android:id="@+id/txtBookName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginRight="50dp"
-        android:text="List Item"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_toRightOf="@+id/imgRecyclerRowProfileImage"
-        android:textStyle="bold"
-        />
+        <ImageView
+            android:layout_weight="1.5"
+            android:id="@+id/imgRecyclerRowProfileImage"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_profile"
+            android:scaleType="centerCrop"/>
 
-    <TextView
-        android:id="@+id/txtBookAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="Name Of Author"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        android:layout_below="@+id/txtBookName"
-        android:layout_toRightOf="@+id/imgRecyclerRowProfileImage"/>
+        <RelativeLayout
+            android:layout_weight="3.3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtBookPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="Rs. 299"
-        android:textColor="@color/green600"
-        android:layout_toRightOf="@id/imgRecyclerRowProfileImage"
-        android:layout_below="@id/txtBookAuthor"/>
+            <TextView
+                android:id="@+id/txtBookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Name Of the Book"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imgRecyclerRowStarImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="48dp"
-        android:paddingTop="10dp"
-        android:src="@drawable/ic_rating_star" />
+            <TextView
+                android:id="@+id/txtBookAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Name Of Author"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_below="@+id/txtBookName"/>
 
-    <TextView
-        android:id="@+id/txtBookRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="18dp"
-        android:text="4.5"
-        android:textColor="@color/yellow700"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtBookPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Rs. 299"
+                android:textColor="@color/green600"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_below="@id/txtBookAuthor"/>
+
+        </RelativeLayout>
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/txtBookRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:padding="4dp"
+            android:drawableLeft="@drawable/ic_rating_star"
+            android:drawablePadding="4dp"
+            android:text="4.5"
+            android:textColor="@color/yellow700"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
